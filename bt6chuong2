@@ -1,0 +1,67 @@
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+class XepLoai {
+private:
+    float diemTrungBinh;
+    string xepLoai;
+
+public:
+    void capNhat(float diemTB) {
+        diemTrungBinh = diemTB;
+        if (diemTB >= 9) {
+            xepLoai = "Xuất sắc";
+        } else if (diemTB >= 8) {
+            xepLoai = "Giỏi";
+        } else if (diemTB >= 6.5) {
+            xepLoai = "Khá";
+        } else if (diemTB >= 5) {
+            xepLoai = "Trung bình";
+        } else {
+            xepLoai = "Yếu";
+        }
+    }
+
+    void xuat() {
+        cout << "Điểm trung bình: " << diemTrungBinh << endl;
+        cout << "Xếp loại: " << xepLoai << endl;
+    }
+};
+
+class HocSinh {
+private:
+    string hoTen;
+    float diemToan, diemVan, diemAnh;
+    XepLoai xepLoai;
+
+public:
+    void nhap() {
+        cout << "Nhap ho ten: ";
+        getline(cin, hoTen);
+        cout << "Nhap diem Toan: ";
+        cin >> diemToan;
+        cout << "Nhap diem Van: ";
+        cin >> diemVan;
+        cout << "Nhap diem Anh: ";
+        cin >> diemAnh;
+    }
+
+    void xuat() {
+        cout << "Ho ten: " << hoTen << endl;
+        xepLoai.xuat();
+    }
+
+    float tinhDiemTrungBinh() {
+        return (diemToan + diemVan + diemAnh) / 3;
+    }
+};
+
+int main() {
+    HocSinh hs;
+    hs.nhap();
+    hs.xepLoai.capNhat(hs.tinhDiemTrungBinh());
+    hs.xuat();
+    return 0;
+}
