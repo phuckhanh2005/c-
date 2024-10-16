@@ -1,0 +1,77 @@
+#include<bits/stdc++.h>
+using namespace std;
+class Hocsinh{
+	private:
+		string mahs,hoten;
+		float toan,van,anh;
+	public:
+		Hocsinh(string mahs,string hoten,float toan,float van,float anh){
+			this->mahs="00000";
+			this->hoten="nguyen van a";
+			this->toan=0;
+			this->van=0;
+			this->anh=0;
+		}	
+		void nhap(){
+			fflush(stdin);
+			getline(cin.mahs);
+			getline(cin.hoten);
+			cin>>toan>>van>>anh;
+		}
+		float dtb(){
+			return (toan+van+anh)/3;
+		}
+		void xuat(){
+			cout<<mahs<<endl;
+			cout<<hoten<<endl;
+			cout<<toan<<van<<anh<<endl;
+			cout<<"diemtb"<<dtb();
+		}
+};
+int main(){
+	vector<Hocsinh> ds;
+	int chon;
+	while(true){
+		cout<<"qlhs"<<enndl;
+		cout << "them chon T";
+ 		cout << "xoa chon X";
+ 		cout << " in chon I";
+		cout << "thoat chon exit";
+		cout<<"chon chucnang";
+	do{
+	cin>>chon;
+	}	
+	while(chon>4 || chon<1){
+		switch(chon){
+			case 1:{
+				hocsinh hs;
+				hs.nhap();
+				ds.push_back(hs);
+				cout<<"ok";
+				break;
+			}
+			case 
+		}
+	}
+	}
+// Hocsinh hs;
+// sting chon;
+// cout << "them chon T";
+// cout << "xoa chon X";
+// cout << " in chon I";
+// cout << "thoat chon exit";
+//
+// for(int i=0,,i++){
+// 	getline(cin.chon);
+// 	if(chon==T){
+// 		Hocsinh hs[];
+// 		hs[i]=new Hocsinh();
+// 		hs[i].nhap();
+// 		
+//	 } 
+//	else if(chon==X){
+//		
+//	} 
+// }
+ 
+}
